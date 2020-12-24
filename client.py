@@ -12,11 +12,17 @@ client.connect(ADDR)
 
 def send(msg):
     message = msg.encode(FORMAT)
-    msg_legth = len(message)
-    send_length= str(msg_legth).encode(FORMAT)
-    send_length +=b''*(HEADER-len(send_length))
+    msg_length = len(message)
+    send_length = str(msg_length).encode(FORMAT)
+    send_length += b' ' * (HEADER - len(send_length))
     client.send(send_length)
     client.send(message)
 
-send("Hello world!")
+
+send("Heyy FELIX PROTICH !!")
+input()
+send("MERRY CHRISTMAS!")
+input()
+send("HAPPY PROSPEROUS NEW YEAR!")
+
 send(DISCONNECT_MESSAGE)
